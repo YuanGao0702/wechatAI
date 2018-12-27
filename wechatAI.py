@@ -1,6 +1,7 @@
 import itchat
 import selenium as se
 from selenium.webdriver.common.by import By
+import json
 
 superlist = []
 flag = True
@@ -23,15 +24,19 @@ def text_reply(msg):
 		if('weather' in msg.text):
 			weather(msg.text.split("weather")[0],id)
 		if('出门' in msg.text):
-			weather('san jose',id)
-			traffic(id)
+			with open('config.json', 'r') as f:
+				config = json.load(f)
+			itchat.send(config['weather'],id)
+			itchat.send(config['traffic'],id)
 
 def traffic(id):
 	options = se.webdriver.ChromeOptions()
 	options.add_argument('headless')
 	driver = se.webdriver.Chrome(chrome_options=options)
-	url = 'https://www.google.com/maps/dir/1424+Goldenlake+Rd,+San+Jose,+CA+95131/555+E+California+Ave,+Sunnyvale,+CA+94086/@37.3806044,-122.0178939,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808fcc3e5f95acc3:0x47daf6fd38218ca4!2m2!1d-121.8762513!2d37.3853429!1m5!1m1!1s0x808fb64142d26eaf:0x8192e11989e6e62f!2m2!1d-122.020508!2d37.380601!3e0'
-	urlTest = 'https://www.google.com/maps/dir/1424+Goldenlake+Rd,+San+Jose,+CA+95131/555+E+California+Ave,+Sunnyvale,+CA+94086/@37.3806044,-122.0178939,12z/data=!3m1!4b1!4m18!4m17!1m5!1m1!1s0x808fcc3e5f95acc3:0x47daf6fd38218ca4!2m2!1d-121.8762513!2d37.3853429!1m5!1m1!1s0x808fb64142d26eaf:0x8192e11989e6e62f!2m2!1d-122.020508!2d37.380601!2m3!6e0!7e2!8j1545897900!3e0'
+	home = config['home']
+	destination = config['destination']
+	url = 'https://www.google.com/maps/dir/'+home+','+destination+'/@37.3806044,-122.0178939,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x808fcc3e5f95acc3:0x47daf6fd38218ca4!2m2!1d-121.8762513!2d37.3853429!1m5!1m1!1s0x808fb64142d26eaf:0x8192e11989e6e62f!2m2!1d-122.020508!2d37.380601!3e0'
+	#urlTest = 'https://www.google.com/maps/dir/'+home+','+destination+'/@37.3806044,-122.0178939,12z/data=!3m1!4b1!4m18!4m17!1m5!1m1!1s0x808fcc3e5f95acc3:0x47daf6fd38218ca4!2m2!1d-121.8762513!2d37.3853429!1m5!1m1!1s0x808fb64142d26eaf:0x8192e11989e6e62f!2m2!1d-122.020508!2d37.380601!2m3!6e0!7e2!8j1545897900!3e0'
 	driver.get(url)
 	time = driver.find_element(By.XPATH,'//div[@class="section-directions-trip-numbers"]/div')
 	distance = driver.find_element(By.XPATH,'//div[@class="section-directions-trip-numbers"]/div[@class="section-directions-trip-distance section-directions-trip-secondary-text"]')
