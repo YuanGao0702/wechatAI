@@ -21,13 +21,20 @@ def text_reply(msg):
 	if id in superlist:
 		flag = True
 	if flag:
-		if('weather' in msg.text):
-			weather(msg.text.split("weather")[0],id)
-		if('出门' in msg.text):
-			with open('config.json', 'r') as f:
-				config = json.load(f)
-			itchat.send(config['weather'],id)
-			itchat.send(config['traffic'],id)
+		#fetch from server
+		if('天气'in msg.text or 'weather' in msg.text):
+			weather(msg.text,id)
+		#fetch from cache
+		with open('config.json', 'rb') as f:
+			config = json.load(f)
+		for message in config['mapping']:
+			if message in msg.text:
+				message = config['mapping'][message]
+				if(isinstance(message, (list,))):
+					for cache in message:
+						itchat.send(config['cache'][cache],id)
+				else:
+					itchat.send(config['cache'][message],id)
 
 def traffic(id):
 	options = se.webdriver.ChromeOptions()
@@ -53,7 +60,7 @@ def weather(city,id):
 	options = se.webdriver.ChromeOptions()
 	options.add_argument('headless')
 	driver = se.webdriver.Chrome(chrome_options=options)
-	url = 'https://www.google.com/search?hl=en&authuser=0&ei=M5YkXM_tOYzBjwTu47jABA&q='+city+'weather&oq=zhuozhou+weather&gs_l=psy-ab.3..35i39.1104929.1106580..1106843...0.0..0.97.684.9......0....1..gws-wiz.......0i71j0i7i30j0i7i5i10i30j0i13j0i13i30j0i8i13i30j35i304i39.kcZOPDwMDfs'
+	url = 'https://www.google.com/search?hl=en&authuser=0&ei=M5YkXM_tOYzBjwTu47jABA&q='+city+'&oq=zhuozhou+weather&gs_l=psy-ab.3..35i39.1104929.1106580..1106843...0.0..0.97.684.9......0....1..gws-wiz.......0i71j0i7i30j0i7i5i10i30j0i13j0i13i30j0i8i13i30j35i304i39.kcZOPDwMDfs'
 	driver.get(url)
 	city = driver.find_element(By.XPATH,'//div[@class="vk_gy vk_h"][@id="wob_loc"]')
 	time = driver.find_element(By.XPATH,'//div[@class="vk_gy vk_sh"][@id="wob_dts"]')
