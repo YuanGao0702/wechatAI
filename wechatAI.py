@@ -8,6 +8,7 @@ flag = True
 
 @itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
+	print(msg)
 	id = msg.fromUserName
 	if msg.text == "aaa":
 		superlist.append(id)
@@ -32,9 +33,20 @@ def text_reply(msg):
 				message = config['mapping'][message]
 				if(isinstance(message, (list,))):
 					for cache in message:
-						itchat.send(config['cache'][cache],id)
+						cache = config['cache'][cache]
+						if(isinstance(cache, (list,))):
+							for e in cache:
+								send_msg(e,id)
 				else:
-					itchat.send(config['cache'][message],id)
+					cache = config['cache'][message]
+					if(isinstance(cache, (list,))):
+						for e in cache:
+							send_msg(e,id)
+def send_msg(msg,id):
+	if 'image' in msg:
+		itchat.send_image(msg,id)
+	else:
+		itchat.send(msg,id)
 
 def traffic(id):
 	options = se.webdriver.ChromeOptions()

@@ -17,14 +17,16 @@
         "bag": "cloth",
         "makeup": "makeup",
         "elec": "electronics",
-        "2019plan": "2019plan",
         "teamviewer":"teamviewer",
-        "备忘录":"备忘录"
+        "备忘录":"备忘录",
+        "上课":"上课",
+        "2019plan":"2019plan"
     },
     "cache": {
+        "2019plan":["1. Career Change\n2. Read a book per month\n3. Put$30k into Stock\n4. Work Out 30min per day\n5. Travel 2 cities\n6. Make friends with 5 IT Guys\n",".\\image\\IMG_0269.JPG",".\\image\\IMG_0270.JPG"],
+        "上课":"周四七点,Class 21 System Design1",
         "备忘录":"无",
         "teamviewer":"xb78f3",
-        "2019plan": "1. Career Change\n2. Read a book per month\n3. Put$30k into Stock\n4. Work Out 30min per day\n5. Travel 2 cities\n6. Make friends with 5 IT Guys\n",
         "weather": "San Jose, CA\nPartly Cloudy\nTempature: 13\u00b0 -- 1\u00b0\n\u6e29\u5ea6\u4f4e\uff0c\u591a\u7a7f\u70b9\u513f\u54c8",
         "traffic": "Traffic: light\nTime: 16 min\n10.9 miles\n",
         "cloth": "1 \u7f51\u4e0a\u8d2d\u7269 \u9886\u5238\u53ef\u4eab\u989d\u59169\u6298Walmart \u8d85\u706b\u6298\u6263\u6e05\u5355 $50\u5165\u4f73\u80fd\u6253\u5370\u673a \u4e0d\u7c98\u9505\u53a8\u5177\u597d\u4ef7\u5165\nhttps://cn.dealmoon.com/Daily-Update-Walmart-50/916803.html\nSubscribe:6621\n2 \u4f4e\u81f33\u6298 Off-White T\u6064$111\u6298\u6263\u5347\u7ea7\uff1aSSENSE\u5e74\u7ec8\u5927\u4fc3\uff0c\u732b\u54aa\u978b$120+\nhttps://cn.dealmoon.com/Up-to-70-off-SSENSE-120/1079922.html\nSubscribe:5176\n3 \u4f4e\u81f33\u6298 BBR\u683c\u7eb9\u56f4\u5dfe$215\u6298\u6263\u5347\u7ea7\uff1aFarfetch \u5e74\u7ec8\u5927\u4fc3\uff0cBurberry\u6597\u7bf7$900+\nhttps://cn.dealmoon.com/Up-to-70-off-Farfetch-Burberry-900/1071606.html\nSubscribe:3456\n4 \u4f4e\u81f33\u6298+\u5305\u5173\u7a0e Kenzo\u864e\u5934T$78\u6298\u6263\u5347\u7ea7\uff1aTESSABIT\u5e74\u7ec8\u5927\u4fc3\u5f00\u542f\nhttps://cn.dealmoon.com/Up-To-70-Off-TESSABIT/1060292.html\nSubscribe:2664\n5 Gucci \u53ccG \u8170\u5e26$300 \u4f18\u8863\u5e93\u7fbd\u7ed2\u670d$39\u4eca\u65e5\u62a2\u597d\u8d27\uff1a\u6700\u4f73\u4eba\u6c14\u5c0f\u7f16\u63a8\u8350Top \u6392\u884c\u699c \u5927\u5bb6\u90fd\u5728\u4e70\nhttps://cn.dealmoon.com/Victorias-Secret-THE-SEMI-ANNUAL-SALE-Top/915736.html\nSubscribe:2494\n6 \u5168\u90e85\u6298 \u661f\u661f\u94fe\u6761\u5305$187.5 \u8fea\u58eb\u5c3c\u5408\u4f5c\u6b3e\u964d\u4ef7Coach\u5b98\u7f51\u5e74\u672b\u5927\u4fc3\u5f00\u542f \u7cbe\u9009\u978b\u5305\u3001\u670d\u9970\u7b49\u70ed\u5356\nhttps://cn.dealmoon.com/50-Off-Coach/1093892.html\nSubscribe:2022\n7 \u4f4e\u81f33\u6298 \u7bad\u5934\u5305$207\u6298\u6263\u5347\u7ea7\uff1aNET-A-PORTER \u5e74\u7ec8\u5927\u4fc3\u5f00\u542f\nhttps://cn.dealmoon.com/Up-to-70-off-NET-A-PORTER/1079930.html\nSubscribe:1714\n8 \u989d\u59167.5\u6298+\u5305\u90ae  $9\u8d77\u6536Nike\u5b98\u7f51\u5e74\u672b\u6298\u4e0a\u6298 RosheOne$38\nhttps://cn.dealmoon.com/Extra-25-Off-Free-Shipping-Nike-RosheOne-38/1314284.html\nSubscribe:1516\n9 \u4f4e\u81f34\u6298 \u5929\u4f7f\u540c\u6b3e$9.9\u8d77 \u5185\u88e4$3.99\u8d77Victoria's Secret \u5e74\u7ec8\u5927\u4fc3 2000+\u7cbe\u9009\u5185\u8863\u5185\u88e4\u70ed\u5356\nhttps://cn.dealmoon.com/Up-to-60-Off-Victorias-Secret-2000/1320258.html\nSubscribe:1098\n10 \u4f4e\u81f35\u6298 Fleming$233Nordstrom \u5e74\u7ec8\u5927\u4fc3\u5f00\u542f \u670d\u9970\u978b\u5305\u7f8e\u5986\u7b49\u70ed\u5356\nhttps://cn.dealmoon.com/Up-to-50-Off-Nordstrom/1317472.html\nSubscribe:1081\n",
