@@ -8,7 +8,7 @@ flag = True
 
 @itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
-	print(msg)
+	print(msg.text)
 	id = msg.fromUserName
 	if msg.text == "aaa":
 		superlist.append(id)
@@ -28,20 +28,26 @@ def text_reply(msg):
 		#fetch from cache
 		with open('config.json', 'rb') as f:
 			config = json.load(f)
-		for message in config['mapping']:
+		for message in config['mapping']: 
 			if message in msg.text:
-				message = config['mapping'][message]
+				message = config['mapping'][message] 
 				if(isinstance(message, (list,))):
-					for cache in message:
-						cache = config['cache'][cache]
+					for cache in message: 
+						cache = config['cache'][cache] 
 						if(isinstance(cache, (list,))):
-							for e in cache:
+							for e in cache: 
 								send_msg(e,id)
+						else:
+							send_msg(cache,id)
 				else:
 					cache = config['cache'][message]
 					if(isinstance(cache, (list,))):
-						for e in cache:
+						for e in cache: 
 							send_msg(e,id)
+					else:
+							send_msg(cache,id)
+		f.close()
+		
 def send_msg(msg,id):
 	if 'image' in msg:
 		itchat.send_image(msg,id)

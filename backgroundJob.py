@@ -4,7 +4,7 @@ import json
 import time
 
 def main():
-    with open('config.json', 'r') as f:
+    with open('config.json', 'rb') as f:
     	config = json.load(f)
     weather(config)
     traffic(config)
