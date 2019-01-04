@@ -8,7 +8,7 @@ def main():
     	config = json.load(f)
     weather(config)
     traffic(config)
-    dealmoon(config)
+    #dealmoon(config)
 
     # print(config['weather'])
     # print(config['traffic'])
