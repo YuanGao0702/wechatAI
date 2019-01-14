@@ -17,16 +17,20 @@
         "makeup": "makeup",
         "elec": "electronics",
         "teamviewer": "teamviewer",
-        "2019plan": "2019plan"
+        "2019plan": "2019plan",
+        "class": "class",
+        "laicode": "laicode"
     },
     "cache": {
+        "laicode": "30/214, 183 to do!",
+        "class": "Sunday, 6:00PM, Nested Class, Iterators, Generics,  Enum",
         "2019plan": [
             "1. Career Change\n2. Read a book per month\n3. Put$30k into Stock\n4. Work Out 30min per day\n5. Travel 2 cities\n6. Make friends with 5 IT Guys\n",
             ".\\image\\IMG_0269.JPG",
             ".\\image\\IMG_0270.JPG"
         ],
-        "teamviewer": "h6b99u",
-        "weather": "San Jose, CA\nPartly Cloudy\nTempature: 14\u00b0 -- 3\u00b0\n\u6e29\u5ea6\u4f4e\uff0c\u591a\u7a7f\u70b9\u513f\u54c8",
-        "traffic": "Traffic: light\nTime: 17 min\n10.9 miles\n"
+        "teamviewer": "p789vx",
+        "weather": "San Jose, CA\nShowers\nTempature: 17\u00b0 -- 13\u00b0\n",
+        "traffic": "Traffic: light\nTime: 19 min\n10.9 miles\n"
     }
 }
