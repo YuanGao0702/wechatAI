@@ -4,6 +4,12 @@ from importlib import reload
 import itchat
 import selenium as se
 from selenium.webdriver.common.by import By
+import speech_recognition as sr 
+import os
+import argparse
+import pyaudio
+import wave
+from pydub import AudioSegment
 
 @itchat.msg_register(itchat.content.TEXT)
 def text_reply(msg):
@@ -35,7 +41,14 @@ def text_reply(msg):
 				else:
 						modules.send_msg(cache,id)
 	f.close()
-
-
+	
+@itchat.msg_register(itchat.content.RECORDING)
+def print_content(msg): 
+	reload(modules)
+	print(msg['Text'](msg['FileName']))
+	modules.convert()
+	str = modules.voiceRec()
+	itchat.send(str,msg.fromUserName)
+	
 itchat.auto_login()
 itchat.run()
