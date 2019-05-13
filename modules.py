@@ -4,7 +4,45 @@ from selenium.webdriver.common.by import By
 import json
 import time
 from importlib import reload
+import speech_recognition as sr 
+import os
+import argparse
+import pyaudio
+import wave
+from pydub import AudioSegment
 
+def voiceRec():
+	r = sr.Recognizer() 
+	harvard = sr.AudioFile('voice.wav')
+	with harvard as source:
+		audio = r.record(source)
+
+	print( type(audio))
+	#,language="zh-CN"
+	print(r.recognize_google(audio))
+	return r.recognize_google(audio,language="zh-CN")
+	
+formats_to_convert = ['.mp3']
+def convert():
+	for (dirpath, dirnames, filenames) in os.walk("./"):
+		for filename in filenames:
+			if filename.endswith(tuple(formats_to_convert)):
+
+				filepath = dirpath + '/' + filename
+				(path, file_extension) = os.path.splitext(filepath)
+				file_extension_final = file_extension.replace('.', '')
+				try:
+					track = AudioSegment.from_file(filepath,
+							file_extension_final)
+					wav_filename = filename.replace(file_extension_final, 'wav')
+					#wav_path = dirpath + '/' + wav_filename
+					wav_path = dirpath + '/' + "voice.wav"
+					print('CONVERTING: ' + str(filepath))
+					file_handle = track.export(wav_path, format='wav')
+					os.remove(filepath)
+				except:
+					print("ERROR CONVERTING " + str(filepath))
+					
 def send_msg(msg,id):
     print(msg)
     if 'image' in msg:
