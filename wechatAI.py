@@ -49,6 +49,9 @@ def print_content(msg):
 	modules.convert()
 	str = modules.voiceRec()
 	itchat.send(str,msg.fromUserName)
+	#fetch from server
+	if('天气'in str or 'weather' in str):
+		modules.weather(str,msg.fromUserName)
 	
 itchat.auto_login()
 itchat.run()
